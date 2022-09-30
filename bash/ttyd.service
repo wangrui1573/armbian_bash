@@ -1,0 +1,11 @@
+[Unit]
+Description=ttyd
+After=network.target
+
+
+[Service]
+ExecStart=/usr/local/ttyd -p 7681 zsh
+
+
+[Install]
+WantedBy=multi-user.target

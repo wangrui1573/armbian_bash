@@ -1,0 +1,11 @@
+[Unit]
+Description=chfs
+After=network.target
+
+
+[Service]
+ExecStart=/usr/local/chfs --path="/mnt|/docker" --port=80 --rule="::rwd"
+
+
+[Install]
+WantedBy=multi-user.target

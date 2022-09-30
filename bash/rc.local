@@ -1,0 +1,21 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+mount -t ext4 /dev/sda1      /mnt/sd1 || true
+docker stop  nas-tools
+sleep 5
+umount /mnt/nas || true
+umount /mnt/nas2 || true
+ mount -t cifs -o iocharset=utf8,username="real",password="1g2y3S"  //192.168.31.192/电影 /mnt/nas
+ mount -t cifs -o iocharset=utf8,username="real",password="1g2y3S"  //192.168.31.192/归档 /mnt/nas2
+docker start nas-tools
+exit 0
