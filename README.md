@@ -1,7 +1,9 @@
 # armbian_bash
 
 用于新建armbian 服务器的期初配置
-
+```bash
+sh -c "$(wget https://ghproxy.com/https://raw.githubusercontent.com/wangrui1573/armbian_bash/main/install.sh -O -)"
+```
 1.开机启动项
 ```bash
     /etc/rc.loal
