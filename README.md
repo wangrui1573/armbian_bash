@@ -4,9 +4,11 @@
 
 1.开机启动项
     /etc.rc.loal
+
 2.chfs服务，简单文件服务器  
     /usr/local/chfs
     /lib/systemd/system/chfs.service
+    
 3.任务计划，监控是否掉盘，自动挂载
     /docker/job.sh
 
